@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ポートフォリオ | yamada1107 </title>
+  <meta name="description" content="ポートフォリオサイトです。LP/Webページ制作だけでなく、データ入力・SNS運用代行などのオンライン業務を幅広く承っています" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<!-- ===== CSS ===== -->
+<style>
+  /* セクション全体 */
+  #works {
+    padding: 80px 20px;
+    background: #f9f5ff;
+  }
+
+  #works h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  #works p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 60px;
+  }
+
+  /* グリッド */
+  .works-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* カード */
+  .works-card {
+    display: flex;
+    flex-wrap: wrap;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  /* 左：画像 */
+  .works-image {
+    flex: 1 1 300px;
+    min-width: 300px;
+  }
+
+  .works-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* 右：説明 */
+  .works-info {
+    flex: 1 1 300px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .works-info h4 {
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+  }
+
+  .works-info p {
+    margin-bottom: 16px;
+    color: #555;
+  }
+
+  /* ボタン */
+  .works-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: linear-gradient(90deg, #3DD598, #1ABC9C);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    text-align: center;
+  }
+
+  .works-btn:hover {
+    opacity: 0.85;
+  }
+
+  /* レスポンシブ */
+  @media (max-width: 768px) {
+    .works-card {
+      flex-direction: column;
+    }
+
+    .works-image {
+      width: 100%;
+      height: auto;
+    }
+
+    .works-info {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .works-btn {
+      margin-top: 16px;
+    }
+  }
+</style>
+
+<body>
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Portfolio</h1>
+      <nav class="nav">
+        <a href="#works">WORKS</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== ヒーローセクション ===== -->
+  <section class="hero" id="top">
+    <div class="container hero-inner">
+      <h2>オンライン業務を幅広くサポート</h2>
+      <p>丁寧・迅速・正確に。クライアント様の「伝えたい」を形にします。</p>
+      <a class="cta" href="#contact">お問い合わせ・ご相談はこちら</a>
+    </div>
+  </section>
+
+<!-- ===== サンプルセクション ===== -->
+<section id="works" class="section" style="padding:80px 20px; background:#f9f5ff;">
+  <h3 style="text-align:center; font-size:2rem; margin-bottom:40px;">Works（制作実績）</h3>
+  <p style="text-align:center; font-size:1.1rem; margin-bottom:60px;">LP/Webページのサンプルはこちらです</p>
+
+  <div class="works-grid" style="display:flex; flex-direction:column; gap:40px; max-width:1000px; margin:0 auto;">
+
+    <!-- LPサンプルカード -->
+    <article class="works-card"
+      style="display:flex; flex-wrap:wrap; background:white; border-radius:12px; overflow:hidden; box-shadow:0 6px 16px rgba(0,0,0,0.08);">
+      <!-- 左：画像 -->
+      <div class="works-image" style="flex:1 1 300px; min-width:300px;">
+        <a href="lp/lp1/index.html" target="_blank">
+          <iframe src="lp/lp1/index.html" width="100%" height="120%" style="border:none;"></iframe>
+        </a>
+      </div>
+      <!-- 右：説明 -->
+      <div class="works-info"
+        style="flex:1 1 300px; padding:24px; display:flex; flex-direction:column; justify-content:center;">
+        <h4 style="margin-bottom:12px; font-size:1.3rem;">美容サロン LP</h4>
+        <p style="margin-bottom:16px; color:#555;">デザインからコーディングまで担当。サイトの魅力を最大限に引き出すデザインです。</p>
+        <a href="lp/lp1/index.html" target="_blank" class="works-btn">詳細はこちら</a>
+      </div>
+    </article>
+
+    <article class="works-card"
+      style="display:flex; flex-wrap:wrap; background:white; border-radius:12px; overflow:hidden; box-shadow:0 6px 16px rgba(0,0,0,0.08);">
+      <div class="works-image" style="flex:1 1 300px; min-width:300px;">
+        <a href="lp/lp2/index.html" target="_blank">
+          <img src="https://images.unsplash.com/photo-1611078489935-0cb6a7aa66b5?auto=format&fit=crop&w=800&q=80"
+            alt="オンライン英会話 LP" style="width:100%; height:100%; object-fit:cover;">
+        </a>
+      </div>
+      <div class="works-info"
+        style="flex:1 1 300px; padding:24px; display:flex; flex-direction:column; justify-content:center;">
+        <h4 style="margin-bottom:12px; font-size:1.3rem;">オンライン英会話 LP</h4>
+        <p style="margin-bottom:16px; color:#555;">ライティング・構成・HTML制作を担当。ユーザー目線で分かりやすく整理しています。</p>
+        <a href="lp/lp1/index.html" target="_blank" class="works-btn">詳細はこちら</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+  <!-- ===== スキル ===== -->
+  <section id="skills" class="container section">
+    <h3>Skills</h3>
+    <ul class="skills">
+      <li>LP制作（デザイン・コーディング・WordPress対応）</li>
+      <li>データ入力・Excel/スプレッドシート処理</li>
+      <li>ネットリサーチ・情報整理</li>
+      <li>SNS運用代行（Instagram / X / TikTok）</li>
+      <li>ライティング・画像編集（Canva・Figma）</li>
+    </ul>
+  </section>
+
+  <!-- ===== 自己紹介 ===== -->
+  <section id="about" class="container section about">
+    <h3>About</h3>
+    <p>丁寧なヒアリングと柔軟な対応を心がけ、依頼主様の目的達成を第一に考えた制作を行っています。</p>
+    <p>納期厳守・報連相を徹底し、安心してご依頼いただけるよう心がけています。</p>
+  </section>
+
+  <!-- ===== お問い合わせ ===== -->
+  <section id="contact" class="container section contact">
+    <h3>Contact</h3>
+    <p>ご依頼・ご相談は以下からお気軽にご連絡ください。</p>
+    <ul>
+      <li>メール: <a href="mailto:you@example.com">you@example.com</a></li>
+      <li>クラウドワークス: <a href="https://crowdworks.jp/public/employees/your-id" target="_blank">プロフィールを見る</a></li>
+    </ul>
+  </section>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> あなたの名前 | Portfolio</small>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

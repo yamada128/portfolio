@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>【初回限定】美肌フェイシャル体験｜LUNA BEAUTY SALON</title>
+  <meta name="description" content="LUNA BEAUTY SALONの初回限定フェイシャル体験。60分で透明感のある素肌へ。WEB予約限定で50%OFFキャンペーン中。">
+
+  <style>
+    /* ==== Header ==== */
+    header {
+      background: linear-gradient(135deg, #fce4ec, #f3e8ff);
+      padding: 120px 20px 100px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: -150px;
+      left: -120px;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle at center, rgba(255, 192, 203, 0.4), transparent 70%);
+      filter: blur(50px);
+      z-index: 0;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -120px;
+      right: -120px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle at center, rgba(255, 240, 250, 0.6), transparent 70%);
+      filter: blur(70px);
+      z-index: 0;
+    }
+
+    .header-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 3rem;
+      letter-spacing: 1px;
+      color: #b91c1c;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, #d946ef, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      color: #6b7280;
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+
+    @media (max-width:600px) {
+      header {
+        padding: 80px 20px 60px 20px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+    }
+
+    /* ==== Hero ==== */
+    .hero {
+      background: url('images/image01.webp') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 180px 20px 140px 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.4rem;
+      background: rgba(0, 0, 0, 0.4);
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 8px;
+    }
+
+    .hero p {
+      margin-top: 16px;
+      background: rgba(0, 0, 0, 0.4);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 6px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      margin-top: 32px;
+      padding: 16px 32px;
+      background: #ec4899;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: background 0.3s;
+    }
+
+    .cta-btn:hover {
+      background: #db2777;
+    }
+
+    /* ==== 特徴 ==== */
+    section {
+      padding: 80px 20px;
+    }
+
+    section h3 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .feature {
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .feature h4 {
+      margin: 20px 0 12px;
+      font-size: 1.3rem;
+    }
+
+    .feature p {
+      padding: 0 16px 28px;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* ==== 料金 ==== */
+    .price {
+      background: #fdf2f8;
+      text-align: center;
+      padding: 100px 20px;
+      border-radius: 16px;
+      margin: 60px 0;
+    }
+
+    .price h3 {
+      color: #be185d;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .price p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .price strong {
+      font-size: 2.2rem;
+      color: #db2777;
+    }
+
+    .line-btn {
+      display: inline-block;
+      margin-top: 24px;
+      background: #06C755;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: opacity 0.3s;
+    }
+
+    .line-btn:hover {
+      opacity: 0.85;
+    }
+
+    /* ==== レビュー ==== */
+    .review {
+      background: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .review blockquote {
+      max-width: 700px;
+      margin: 0 auto;
+      font-style: italic;
+      color: #444;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .review cite {
+      display: block;
+      margin-top: 12px;
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    /* ==== フッター ==== */
+    footer {
+      background: #f9a8d4;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.95rem;
+    }
+
+    /* ==== 固定LINEバナー ==== */
+    .line-fixed {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #06C755;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: opacity 0.3s;
+      z-index: 999;
+    }
+
+    .line-fixed:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <h1>LUNA BEAUTY SALON</h1>
+      <p>心も肌も、ふわっとやわらぐ時間を。</p>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>初回限定 50%OFFキャンペーン中！</h2>
+    <p>60分で感じる素肌リセット体験</p>
+    <a href="#reserve" class="cta-btn">今すぐ予約する</a>
+  </section>
+
+  <!-- 特徴 -->
+  <section>
+    <h3>選ばれる3つの理由</h3>
+    <div class="feature-grid">
+      <div class="feature">
+        <img src="images/image01.jpg" alt="サロンの様子">
+        <h4>1. 丁寧なカウンセリング</h4>
+        <p>肌悩みや生活習慣をヒアリングし、あなたに合った施術プランをご提案します。</p>
+      </div>
+      <div class="feature">
+        <img src="https://images.unsplash.com/photo-1600180758890-6a1e39a3a4c1?auto=format&fit=crop&w=800&q=80" alt="">
+        <h4>2. 高品質なオーガニック化粧品</h4>
+        <p>低刺激で肌に優しい製品を使用。敏感肌の方も安心してご利用いただけます。</p>
+      </div>
+      <div class="feature">
+        <img src="https://images.unsplash.com/photo-1611078489935-0cb6a7aa66b5?auto=format&fit=crop&w=800&q=80" alt="">
+        <h4>3. 経験豊富なエステティシャン</h4>
+        <p>10年以上の経験を持つスタッフが、一人ひとりに丁寧に施術いたします。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 料金 -->
+  <section class="price" id="reserve">
+    <h3>初回限定トライアル価格</h3>
+    <p>通常価格 <del>¥8,000</del> → <strong>¥3,980（税込）</strong></p>
+    <a href="https://lin.ee/3tuBYAI" target="_blank" class="line-btn">LINEで予約・相談する</a>
+  </section>
+
+  <!-- レビュー -->
+  <section class="review">
+    <h3>お客様の声</h3>
+    <blockquote>
+      「初めてのエステで緊張していましたが、スタッフの方がとても丁寧でリラックスできました。
+      翌日の肌のモチモチ感に感動！ またお願いしたいです。」
+      <cite>— 30代 女性 / 会社員</cite>
+    </blockquote>
+  </section>
+
+  <!-- フッター -->
+  <footer>
+    <p>© 2025 LUNA BEAUTY SALON</p>
+    <p><a href="../index.html" style="color:white;text-decoration:underline;">← ポートフォリオTOPへ戻る</a></p>
+  </footer>
+
+  <!-- 固定LINEバナー -->
+  <a href="https://lin.ee/3tuBYAI" target="_blank" class="line-fixed">LINEで予約・相談</a>
+
+</body>
+
+</html>
