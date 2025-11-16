@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width,initial-scale=1">
+   <title>Executive English — 意識高いビジネスマンのための英会話レッスン</title>
+   <meta name="description" content="外資系・グローバル会議で自信を持って話すための短期集中型英会話。実務に直結する表現とプレゼン訓練で、3ヶ月で結果を出すプログラム。">
+   <style>
+      :root {
+         --accent: #0b6efd;
+         --accent-grad1: #f97316;
+         --accent-grad2: #fb923c;
+         --muted: #6b7280;
+         --bg: #0f1724;
+         --card: #0b1220;
+         --glass: rgba(255, 255, 255, 0.04);
+         --radius: 16px;
+         font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'メイリオ', sans-serif;
+         color-scheme: dark;
+      }
+
+      * {
+         box-sizing: border-box
+      }
+
+      html,
+      body {
+         height: 100%;
+         margin: 0;
+         background: linear-gradient(180deg, #071021 0%, #071526 60%);
+         color: #eef2ff
+      }
+
+      a {
+         color: var(--accent);
+         text-decoration: none
+      }
+
+      .container {
+         max-width: 1100px;
+         margin: 0 auto;
+         padding: 28px
+      }
+
+      /* Header */
+      header {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         margin-bottom: 28px;
+         position: sticky;
+         top: 0;
+         background: rgba(0, 0, 0, 0.6);
+         backdrop-filter: blur(8px);
+         padding: 10px 0;
+         z-index: 1000
+      }
+
+      .logo {
+         display: flex;
+         gap: 12px;
+         align-items: center
+      }
+
+      .logo .mark {
+         width: 44px;
+         height: 44px;
+         border-radius: 10px;
+         background: linear-gradient(135deg, var(--accent), #3b82f6);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-weight: 700
+      }
+
+      nav a {
+         margin-left: 28px;
+         color: rgba(255, 255, 255, 0.85)
+      }
+
+      .cta-btn {
+         margin-left: 32px;
+         background: linear-gradient(135deg, #f97316, #fb923c);
+         border: none;
+         padding: 10px 16px;
+         border-radius: 10px;
+         font-weight: 600
+      }
+
+      /* Hero */
+      .hero {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 36px;
+         align-items: center;
+         margin-top: 18px
+      }
+
+      .hero img {
+         width: 100%;
+         border-radius: 16px;
+         margin-bottom: 20px
+      }
+
+      .hero .kicker {
+         font-size: 14px;
+         color: var(--muted);
+         margin-bottom: 10px
+      }
+
+      .hero h1 {
+         font-size: 40px;
+         line-height: 1.02;
+         margin: 0
+      }
+
+      .hero p.lead {
+         color: rgba(255, 255, 255, 0.8);
+         margin: 16px 0;
+         font-size: 16px
+      }
+
+      .chip {
+         background: var(--glass);
+         padding: 10px 12px;
+         border-radius: 999px;
+         font-weight: 600;
+         font-size: 13px;
+         margin-bottom: 8px;
+         display: inline-block
+      }
+
+      .card {
+         background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+         padding: 20px;
+         border-radius: 14px;
+         box-shadow: 0 6px 20px rgba(2, 6, 23, 0.6)
+      }
+
+      .price {
+         font-size: 22px;
+         font-weight: 700
+      }
+
+      .form-row {
+         display: flex;
+         gap: 10px;
+         margin-top: 12px
+      }
+
+      input,
+      select {
+         width: 100%;
+         padding: 12px;
+         border-radius: 10px;
+         border: 1px solid rgba(255, 255, 255, 0.06);
+         background: transparent;
+         color: inherit
+      }
+
+      button[type=submit] {
+         width: 100%;
+         padding: 12px;
+         border-radius: 10px;
+         border: none;
+         background: var(--accent);
+         font-weight: 700;
+         margin-top: 12px
+      }
+
+      .features {
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         gap: 16px;
+         margin: 40px 0
+      }
+
+      .feature {
+         background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+         padding: 18px;
+         border-radius: 12px
+      }
+
+      .muted {
+         color: var(--muted);
+         font-size: 14px
+      }
+
+      .split {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 20px;
+         margin-bottom: 40px
+      }
+
+      .testimonial {
+         background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+         padding: 16px;
+         border-radius: 12px
+      }
+
+      .pricing {
+         display: flex;
+         gap: 12px
+      }
+
+      .plan {
+         flex: 1;
+         padding: 18px;
+         border-radius: 12px;
+         background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.02));
+         border: 1px solid transparent;
+         transition: 0.3s
+      }
+
+      .plan:hover {
+         border: 2px solid var(--accent)
+      }
+
+      .cta-fixed {
+         position: fixed;
+         bottom: 20px;
+         right: 20px;
+         background: linear-gradient(135deg, var(--accent-grad1), var(--accent-grad2));
+         padding: 24px 32px;
+         font-size: 22px;
+         border-radius: 20px;
+         font-weight: 700;
+         z-index: 999;
+         border: none;
+         box-shadow: 0 10px 36px rgba(0, 0, 0, 0.6)
+      }
+
+      footer {
+         margin-top: 56px;
+         padding: 22px 0;
+         color: var(--muted);
+         font-size: 13px;
+         text-align: center
+      }
+
+      @media(max-width:900px) {
+         .hero aside {
+            width: 100%;
+         }
+
+         .hero {
+            grid-template-columns: 1fr
+         }
+
+         .features {
+            grid-template-columns: 1fr
+         }
+
+         .split {
+            grid-template-columns: 1fr
+         }
+
+         .pricing {
+            flex-direction: column
+         }
+      }
+/* === Curriculum Timeline === */
+.timeline {
+   position: relative;
+   margin-top: 20px;
+   padding-left: 28px;
+}
+
+.timeline::before {
+   content: "";
+   position: absolute;
+   left: 10px;
+   top: 0;
+   bottom: 0;
+   width: 3px;
+   background: linear-gradient(180deg, var(--accent), #3b82f6);
+   border-radius: 2px;
+}
+
+.timeline-item {
+   position: relative;
+   margin-bottom: 26px;
+   padding: 16px;
+   background: rgba(255,255,255,0.04);
+   border: 1px solid rgba(255,255,255,0.06);
+   border-radius: 14px;
+   backdrop-filter: blur(4px);
+}
+
+.timeline-item::before {
+   content: "";
+   position: absolute;
+   left: -18px;
+   top: 18px;
+   width: 14px;
+   height: 14px;
+   border-radius: 50%;
+   background: linear-gradient(135deg, var(--accent), #60a5fa);
+   border: 2px solid #0f1724;
+}
+
+.timeline-item h4 {
+   margin: 0;
+   font-size: 18px;
+}
+
+.timeline-item .muted {
+   margin-top: 4px;
+   font-size: 14px;
+   line-height: 1.5;
+}
+
+#curriculum .muted,
+#faq .muted {
+   color: #ffffff !important;
+}
+
+   </style>
+</head>
+
+<body>
+   <div class="container">
+
+      <header>
+         <div class="logo">
+            <div class="mark">EE</div>
+            <div>
+               <div style="font-weight:700">Executive English</div>
+               <div class="muted" style="font-size:12px">For Ambitious Business Professionals</div>
+            </div>
+         </div>
+         <nav>
+            <a href="#curriculum">カリキュラム</a>
+            <a href="#pricing">料金</a>
+            <a href="#faq">よくある質問</a>
+            <a href="#form" class="cta-btn">無料体験を申し込む</a>
+
+         </nav>
+      </header>
+
+      <section class="hero">
+         <img src="image.webp" alt="英会話レッスンのイメージ"
+            style="grid-column:1;grid-row:1/3;width:100%;border-radius:16px;margin-bottom:20px">
+
+         <div style="grid-column:2;">
+            <div class="kicker"">短期集中 × 実務直結</div>
+      <h1>会議で黙らない。<br>英語で「論点」を作り、リードする力を。</h1>
+      <p class=" lead">外資系会議、プレゼン、交渉――成果につながる英語力を鍛える実践型トレーニング。ビジネスで“発言力”を持つためのカリキュラム。</p>
+
+               <!-- satisfaction -->
+               <div style="margin-top:22px;display:flex;gap:12px;align-items:center">
+                  <div class="card" style="padding:10px 14px;display:flex;align-items:center;width:fit-content">
+                     <div
+                        style="font-weight:800;background:linear-gradient(90deg,#fed7aa,#f97316);-webkit-background-clip:text;color:transparent">
+                        受講者満足度 95%</div>
+                  </div>
+                  <div class="muted">転職成功・昇進の事例多数</div>
+               </div>
+            </div>
+
+            <aside id="form" class="card" style="grid-column:1 / span 2; width:100%; margin-top:28px">
+               <div style="display:flex;justify-content:space-between;align-items:center">
+                  <div>
+                     <div class="muted">スタート特典</div>
+                     <div class="price" >初月 14,800円（税抜）</div>
+                  </div>
+                  <div style="text-align:right">
+                     <div class="muted">無料体験</div>
+                     <div style="font-weight:700">30分</div>
+                  </div>
+               </div>
+
+               <form id="leadForm" style="margin-top:12px">
+                  <label class="muted">お名前</label>
+                  <input type="text" name="name" placeholder="例：山田 太郎" required>
+                  <div class="form-row">
+                     <div style="flex:2">
+                        <label class="muted">メール</label>
+                        <input type="email" name="email" placeholder="you@example.com" required>
+                     </div>
+                     <div style="flex:1">
+                        <label class="muted">職位</label>
+                        <select name="role" style="color:#fff;background:#0b1220;border:1px solid #3b82f6;">
+                           <option value="manager">マネージャー</option>
+                           <option value="director">部長</option>
+                           <option value="executive">経営者</option>
+                           <option value="other">その他</option>
+                        </select>
+                     </div>
+                  </div>
+                  <button type="submit">無料体験を申し込む</button>
+                  <div class="muted" style="font-size:12px;margin-top:8px">※まずは30分の体験で現在の課題を明確にします</div>
+               </form>
+            </aside>
+      </section>
+
+      <section class="features" aria-label="特徴">
+         <div class="feature">
+            <h3>実務直結のロールプレイ</h3>
+            <p class="muted">実際の会議や商談を想定した課題で、すぐ使える表現を手に入れます。</p>
+         </div>
+         <div class="feature">
+            <h3>個別フィードバック</h3>
+            <p class="muted">講師が発音・論理構成・語彙を個別に指導。録音レビューで成長を可視化。</p>
+         </div>
+         <div class="feature">
+            <h3>短期集中プラン</h3>
+            <p class="muted">3ヶ月で“発言力”を上げるために設計された最短カリキュラム。</p>
+         </div>
+      </section>
+
+<section class="split" id="curriculum">
+
+   <!-- Left: Curriculum -->
+   <div class="syllabus card">
+      <h2>カリキュラム（12週間）</h2>
+
+      <div class="timeline">
+         <div class="timeline-item">
+            <h4>Week 1-2</h4>
+            <div class="muted">意思決定フレーズ・論点整理</div>
+         </div>
+
+         <div class="timeline-item">
+            <h4>Week 3-6</h4>
+            <div class="muted">データ活用プレゼン・構成技術</div>
+         </div>
+
+         <div class="timeline-item">
+            <h4>Week 7-10</h4>
+            <div class="muted">交渉・質問で主導権を取る技術</div>
+         </div>
+
+         <div class="timeline-item">
+            <h4>Week 11-12</h4>
+            <div class="muted">実務プレゼン＋総合フィードバック</div>
+         </div>
+      </div>
+
+      <p class="muted" style="margin-top:16px">
+         ※カスタマイズ可能。管理職向け、営業向け、CxO向けなど目的別トラックあり。
+      </p>
+   </div>
+
+
+   <!-- Right: Testimonials -->
+   <div>
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:12px">受講者の声</h3>
+
+      <div class="testimonial card" style="margin-top:12px">
+         <div style="display:flex;gap:12px;align-items:center">
+            <div
+               style="width:52px;height:52px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700">
+               KM</div>
+            <div>
+               <div style="font-weight:700">Kenta M. — 部長（外資系）</div>
+               <div class="muted" style="font-size:13px">「会議で自分の案を英語で主導できるようになりました。昇進にもつながりました。」</div>
+            </div>
+         </div>
+      </div>
+
+      <div class="testimonial card" style="margin-top:12px">
+         <div style="display:flex;gap:12px;align-items:center">
+            <div
+               style="width:52px;height:52px;border-radius:8px;background:linear-gradient(135deg,#22c55e,#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700">
+               AY</div>
+            <div>
+               <div style="font-weight:700">Ayaka Y. — 経営企画</div>
+               <div class="muted" style="font-size:13px">「短期間でプレゼンの組み立て方が変わり、英語での説得力が増しました。」</div>
+            </div>
+         </div>
+      </div>
+
+      <div class="testimonial card" style="margin-top:12px">
+         <div style="display:flex;gap:12px;align-items:center">
+            <div
+               style="width:52px;height:52px;border-radius:8px;background:linear-gradient(135deg,#0b6efd,#6366f1);display:flex;align-items:center;justify-content:center;font-weight:700">
+               HK</div>
+            <div>
+               <div style="font-weight:700">Hiroshi K. — プロダクトマネージャー</div>
+               <div class="muted" style="font-size:13px">「海外チームとの会議で発言量が増え、自分の意図を正確に伝えられるようになりました。」</div>
+            </div>
+         </div>
+      </div>
+
+   </div>
+
+</section>
+
+</section>
+
+
+
+
+
+      <section id="pricing">
+         <h2>料金プラン</h2>
+         <div class="pricing" style="margin-top:12px">
+            <div class="plan">
+               <div class="title">ライト（個人向け）</div>
+               <div class="muted">週1回 × 60分 / 月</div>
+               <div style="font-weight:700;margin-top:8px">月額 19,800円</div>
+               <ul class="muted" style="margin-top:8px">
+                  <li>個別フィードバック</li>
+                  <li>録音レビュー</li>
+               </ul>
+            </div>
+
+            <div class="plan popular">
+               <div class="title">プロ（管理職向け）</div>
+               <div class="muted">週2回 × 60分 / 月</div>
+               <div style="font-weight:700;margin-top:8px">月額 39,800円</div>
+               <ul class="muted" style="margin-top:8px">
+                  <li>プレゼン集中トラック</li>
+                  <li>採用向け英語面接対策</li>
+               </ul>
+            </div>
+
+            <div class="plan">
+               <div class="title">カスタム（企業向け）</div>
+               <div class="muted">チーム規模・ニーズに合わせて要相談</div>
+               <div style="font-weight:700;margin-top:8px">お問い合わせ</div>
+            </div>
+         </div>
+      </section>
+
+      <section id="faq" style="margin-top:28px">
+         <h2>よくある質問</h2>
+         <div style="display:grid;gap:12px;margin-top:12px">
+            <div class="card">
+               <strong>Q: 初心者でもついていけますか？</strong>
+               <p class="muted">A: 初心者向けの導入トラックも用意していますが、本サービスは“実務で使える”ことを重視したカリキュラムです。</p>
+            </div>
+            <div class="card">
+               <strong>Q: レッスンはオンラインですか？</strong>
+               <p class="muted">A: 全てオンライン（Zoom）で実施。録画で復習可能です。</p>
+            </div>
+         </div>
+      </section>
+
+      <footer>
+         <div>Executive English — 意識の高いビジネスマンのための英会話スクール</div>
+         <div style="margin-top:6px">会社名: 株式会社Executive English / お問い合わせ: info@example.com</div>
+      </footer>
+   </div>
+
+
+
+   <script>
+      const leadForm = document.getElementById('leadForm');
+      if (leadForm) {
+         leadForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const data = {
+               name: form.name.value || '',
+               email: form.email.value || '',
+               role: form.role.value || ''
+            };
+            alert(data.name + 'さん、無料体験のお申し込みを受け付けました（デモ）。メール:' + data.email);
+            form.reset();
+
+            // Notion に保存（本番利用時は APIキーとDB IDを設定してください）
+            fetch('https://api.notion.com/v1/pages', {
+               method: 'POST',
+               headers: {
+                  'Authorization': 'Bearer YOUR_NOTION_API_KEY',
+                  'Content-Type': 'application/json',
+                  'Notion-Version': '2022-06-28'
+               },
+               body: JSON.stringify({
+                  parent: { database_id: 'YOUR_DATABASE_ID' },
+                  properties: {
+                     Name: { title: [{ text: { content: data.name } }] },
+                     Email: { rich_text: [{ text: { content: data.email } }] },
+                     Role: { rich_text: [{ text: { content: data.role } }] }
+                  }
+               })
+            }).then(r => console.log('Notion 保存完了', r)).catch(err => console.error(err));
+         });
+      }
+   </script>
+</body>
+
+</html>

@@ -51,8 +51,11 @@
   .works-image {
     flex: 1 1 300px;
     min-width: 300px;
+    aspect-ratio: 4 / 3; /* （横:縦）= 4:3 → やや縦長で自然 */
+}
   }
 
+  
   .works-image img {
     width: 100%;
     height: 100%;
@@ -143,7 +146,7 @@
 
 <!-- ===== サンプルセクション ===== -->
 <section id="works" class="section" style="padding:80px 20px; background:#f9f5ff;">
-  <h3 style="text-align:center; font-size:2rem; margin-bottom:40px;">Works（制作実績）</h3>
+  <h3 style="text-align:center; font-size:2rem; margin-bottom:40px;">Works</h3>
   <p style="text-align:center; font-size:1.1rem; margin-bottom:60px;">LP/Webページのサンプルはこちらです</p>
 
   <div class="works-grid" style="display:flex; flex-direction:column; gap:40px; max-width:1000px; margin:0 auto;">
@@ -161,7 +164,12 @@
       <div class="works-info"
         style="flex:1 1 300px; padding:24px; display:flex; flex-direction:column; justify-content:center;">
         <h4 style="margin-bottom:12px; font-size:1.3rem;">美容サロン LP</h4>
-        <p style="margin-bottom:16px; color:#555;">デザインからコーディングまで担当。サイトの魅力を最大限に引き出すデザインです。</p>
+        <p style="margin-bottom:16px; color:#555;">
+            <li>20〜30代女性をターゲットと想定し「透明感・やわらかさ・安心感」を軸にデザイン</li>
+            <li>グラデーションや柔らかい余白で安心感を演出</li>
+            <li>Heroで世界観を提示し、特徴・料金・口コミの順にユーザーの不安を解消しながら予約導線へ誘導する構成</li>
+            
+        </p>
         <a href="lp/lp1/index.html" target="_blank" class="works-btn">詳細はこちら</a>
       </div>
     </article>
@@ -189,11 +197,14 @@
   <section id="skills" class="container section">
     <h3>Skills</h3>
     <ul class="skills">
-      <li>LP制作（デザイン・コーディング・WordPress対応）</li>
-      <li>データ入力・Excel/スプレッドシート処理</li>
+      <li>ライティング・画像編集（Canva）</li>
+      <li>LP制作（デザイン・コーディング）
+        <ul>
+          <li>LINE公式アカウントとの連携対応</li>
+        </ul>
+      </li>
       <li>ネットリサーチ・情報整理</li>
-      <li>SNS運用代行（Instagram / X / TikTok）</li>
-      <li>ライティング・画像編集（Canva・Figma）</li>
+      <li>SNS運用代行</li>      
     </ul>
   </section>
 
