@@ -49,10 +49,6 @@ a {
    Header
 =============================== */
 
-/* ================================
-   HEADER (Glass + Minimal + Logo Unified)
-================================ */
-
 .site-header {
   width: 100%;
   position: sticky;
@@ -132,13 +128,35 @@ a {
 }
 
 /* Mobile Nav */
+/* 初期状態 */
 .mobile-nav {
   display: none;
   flex-direction: column;
-  background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(10px);
-  padding: 20px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  padding: 20px 24px;
   border-bottom: 1px solid rgba(0,0,0,0.05);
+  position: absolute;
+  top: 70px;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+/* JS で .open が付いた時 */
+.mobile-nav.open {
+  display: flex;
+}
+
+/* ハンバーガータップ時アニメーション */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 .mobile-nav a {
@@ -280,41 +298,52 @@ a {
 
 /* 左：画像エリア */
 .works-image {
-  position: relative;
-  flex: 1 1 350px;
-  min-width: 320px;
-  height: 260px;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* 画像比率を一定にする（絶対切れない） */
   overflow: hidden;
+  position: relative;
   background: #e5e7eb;
+  min-width: unset;
+  height: auto;
 }
 
 /* 初期表示の静止サムネイル */
+.preview-wrapper {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
 .preview-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: opacity .4s;
 }
 
-/* hoverで切り替わるプレビュー画像 */
-.preview-hover {
+.preview-iframe {
   position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: 0.4s ease;
-}
-
-.preview-hover img {
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  border: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .4s;
 }
 
-/* hover切替（PCのみ） */
-@media (hover: hover) {
-  .works-image:hover .preview-hover {
-    opacity: 1;
-  }
+.preview-wrapper:hover .preview-img {
+  opacity: 0;
 }
+
+.preview-wrapper:hover .preview-iframe {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 
 /* ワンポイントロゴ */
 .work-logo {
@@ -349,17 +378,26 @@ a {
 }
 
 .btn {
-  display: inline-block;
-  padding: 12px 27px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;      
   background: var(--primary);
   color: white;
-  border-radius: 28px;
+  border-radius: 24px;     
   font-weight: 600;
+  font-size: 0.95rem;      
+  white-space: nowrap;     /* 改行防止 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.25s ease;
 }
 
 .btn:hover {
   background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
+
 
 /* ===============================
    Skills
@@ -612,6 +650,17 @@ a {
   <!-- Stylesheet -->
   <link rel="stylesheet" href="portfolio.css" />
 </head>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const ham = document.getElementById("ham");
+    const mobileNav = document.getElementById("mobileNav");
+
+    ham.addEventListener("click", () => {
+      mobileNav.classList.toggle("open");
+      ham.classList.toggle("active");
+    });
+  });
+</script>
 
 <body>
 
@@ -701,15 +750,13 @@ a {
         <!-- Work Card 1 -->
         <article class="works-card">
           <div class="works-image">
-            <a href="lp/lp2/index.html" target="_blank">
-              <img src="images/lp02.PNG" class="preview-img" alt="オンライン英会話 LP">
+            <a href="lp/lp1/index.html" target="_blank">
+              <img src="images/lp01.PNG" class="preview-img" alt="美容サロン LP">
               <div class="preview-hover">
-                <img src="images/lp02.PNG" alt="LP詳細プレビュー">
+                <img src="images/lp01.PNG" alt="美容LP詳細" target="_blank">
               </div>
             </a>
-    
-            <!-- ★ ロゴワンポイント -->
-            <img src="images/logo.svg" class="work-logo">
+            <img src="images/logo.svg" class="work-logo" >
           </div>
     
           <div class="works-info">
@@ -800,20 +847,20 @@ a {
                   <div class="contact-icon line-icon">💬</div>
                   <div class="contact-info">
                     <h4>LINEで相談する</h4>
-                    <a href="https://lin.ee/yourlineurl" target="_blank" class="contact-link line-link">
+                    <a href="https://lin.ee/Iw14vWf" target="_blank" class="contact-link line-link">
                       公式LINEを開く
                     </a>
                   </div>
                 </div>
 
-                
+
     </div>
 
           
 
 
-    <a href="cw.yamada128@gmail.com" class="contact-cta">
-      無料で相談してみる
+    <a href="https://lin.ee/Iw14vWf" class="contact-cta">
+      LINEから無料で相談してみる
     </a>
 
   </div>
