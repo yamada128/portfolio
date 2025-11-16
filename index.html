@@ -214,40 +214,64 @@ a {
    Hero
 =============================== */
 
+/* ===============================
+   Hero（コンパクト版）
+=============================== */
+
 .hero {
   background: linear-gradient(135deg, #eaf1ff, #f8fbff);
-  padding: 110px 20px 90px;
+  padding: 60px 20px 50px;     /* ← かなりコンパクトに */
   text-align: center;
 }
 
 .hero-title {
-  font-size: 2.7rem;
+  font-size: 2.1rem;           /* ← 少し小さめ */
   font-weight: 700;
   color: var(--primary-dark);
-  margin-bottom: 20px;
-  letter-spacing: -1px;
+  margin-bottom: 12px;         /* ← 余白圧縮 */
+  letter-spacing: -0.5px;
 }
 
 .hero-text {
-  font-size: 1.18rem;
+  font-size: 1.05rem;
   color: var(--muted);
-  line-height: 1.8;
-  margin-bottom: 40px;
+  line-height: 1.6;            /* ← 詰め気味に */
+  max-width: 650px;
+  margin: 0 auto 26px;         /* ← 下余白も調整 */
 }
 
 .hero-cta {
   display: inline-block;
-  padding: 16px 40px;
+  padding: 12px 28px;          /* ← 少しスリムに */
   background: var(--primary);
   color: var(--white);
-  border-radius: 35px;
+  border-radius: 28px;
   font-weight: 600;
-  font-size: 1rem;
-  box-shadow: var(--shadow);
+  font-size: 0.95rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
 }
 
 .hero-cta:hover {
   background: var(--primary-dark);
+}
+
+/* ==== Mobile ==== */
+@media (max-width: 600px) {
+  .hero {
+    padding: 50px 20px 40px;   /* SP もさらに圧縮 */
+  }
+  .hero-title {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+  }
+  .hero-text {
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+  }
+  .hero-cta {
+    padding: 12px 22px;
+    font-size: 0.95rem;
+  }
 }
 
 /* ===============================
