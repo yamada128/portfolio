@@ -5,328 +5,1012 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>【初回限定】美肌フェイシャル体験｜LUNA BEAUTY SALON</title>
-  <meta name="description" content="LUNA BEAUTY SALONの初回限定フェイシャル体験。60分で透明感のある素肌へ。WEB予約限定で50%OFFキャンペーン中。">
+  <meta name="description" content="LUNA BEAUTY SALONの初回限定フェイシャル体験。60分で透明感のある素肌へ。シャネルのようなモノトーン×エレガントな空間で、特別なひとときを。">
+  <!-- シャネル系：モノトーン＋洗練されたセリフ体 -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
 
   <style>
-    /* ==== Header ==== */
-    header {
-      background: linear-gradient(135deg, #fce4ec, #f3e8ff);
-      padding: 120px 20px 100px 20px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+    :root {
+      --bg: #f5f5f4;
+      --bg-soft: #faf9f8;
+      --text-main: #111111;
+      --text-muted: #666666;
+      --border-soft: #e5e5e5;
+      --accent: #c2a26b;
+      --accent-soft: rgba(194, 162, 107, 0.12);
+      --black: #111111;
+      --white: #ffffff;
     }
 
-    header::before {
-      content: "";
-      position: absolute;
-      top: -150px;
-      left: -120px;
-      width: 350px;
-      height: 350px;
-      background: radial-gradient(circle at center, rgba(255, 192, 203, 0.4), transparent 70%);
-      filter: blur(50px);
-      z-index: 0;
+    * {
+      box-sizing: border-box;
     }
 
-    header::after {
-      content: "";
-      position: absolute;
-      bottom: -120px;
-      right: -120px;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle at center, rgba(255, 240, 250, 0.6), transparent 70%);
-      filter: blur(70px);
-      z-index: 0;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .header-inner {
-      position: relative;
-      z-index: 1;
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
 
-    header h1 {
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ===== Layout ===== */
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    /* ===== Header (ブランドバー) ===== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(245, 245, 244, 0.85);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .site-header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .brand-main {
       font-family: "Playfair Display", serif;
-      font-size: 3rem;
-      letter-spacing: 1px;
-      color: #b91c1c;
-      margin-bottom: 15px;
-      background: linear-gradient(90deg, #d946ef, #ec4899);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    header p {
-      color: #6b7280;
-      font-size: 1.2rem;
-      margin-bottom: 25px;
-    }
-
-    @media (max-width:600px) {
-      header {
-        padding: 80px 20px 60px 20px;
-      }
-
-      header h1 {
-        font-size: 2rem;
-      }
-
-      header p {
-        font-size: 1rem;
-      }
-    }
-
-    /* ==== Hero ==== */
-    .hero {
-      background: url('images/image01.webp') center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 180px 20px 140px 20px;
-    }
-
-    .hero h2 {
-      font-size: 2.4rem;
-      background: rgba(0, 0, 0, 0.4);
-      display: inline-block;
-      padding: 12px 24px;
-      border-radius: 8px;
-    }
-
-    .hero p {
-      margin-top: 16px;
-      background: rgba(0, 0, 0, 0.4);
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 6px;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      margin-top: 32px;
-      padding: 16px 32px;
-      background: #ec4899;
-      color: white;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.05rem;
-      transition: background 0.3s;
-    }
-
-    .cta-btn:hover {
-      background: #db2777;
-    }
-
-    /* ==== 特徴 ==== */
-    section {
-      padding: 80px 20px;
-    }
-
-    section h3 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 40px;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 32px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .feature {
-      background: white;
-      border-radius: 14px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      text-align: center;
-      transition: transform 0.3s;
-    }
-
-    .feature:hover {
-      transform: translateY(-5px);
-    }
-
-    .feature img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .feature h4 {
-      margin: 20px 0 12px;
-      font-size: 1.3rem;
-    }
-
-    .feature p {
-      padding: 0 16px 28px;
+      letter-spacing: 0.35em;
       font-size: 1rem;
-      color: #555;
+      text-transform: uppercase;
     }
 
-    /* ==== 料金 ==== */
-    .price {
-      background: #fdf2f8;
-      text-align: center;
-      padding: 100px 20px;
-      border-radius: 16px;
-      margin: 60px 0;
+    .brand-sub {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
     }
 
-    .price h3 {
-      color: #be185d;
-      font-size: 2rem;
-      margin-bottom: 20px;
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
-    .price p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
+    .nav a {
+      position: relative;
+      padding-bottom: 4px;
     }
 
-    .price strong {
-      font-size: 2.2rem;
-      color: #db2777;
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--black);
+      transition: width 0.25s ease;
     }
 
-    .line-btn {
-      display: inline-block;
-      margin-top: 24px;
-      background: #06C755;
-      color: white;
-      padding: 14px 28px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.05rem;
-      transition: opacity 0.3s;
+    .nav a:hover::after {
+      width: 100%;
     }
 
-    .line-btn:hover {
-      opacity: 0.85;
+    .nav-cta {
+      padding: 7px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--black);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      background: #111;
+      color: #fff;
+      transition: background 0.25s ease, color 0.25s ease;
     }
 
-    /* ==== レビュー ==== */
-    .review {
+    .nav-cta:hover {
       background: #fff;
-      text-align: center;
-      padding: 80px 20px;
+      color: #111;
     }
 
-    .review blockquote {
-      max-width: 700px;
-      margin: 0 auto;
-      font-style: italic;
-      color: #444;
-      font-size: 1.05rem;
+    /* ===== Hero ===== */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 56px;
+      padding: 80px 0 72px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .hero-left-kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .hero-title-ja {
+      font-size: 1.1rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .hero-title-en {
+      font-family: "Playfair Display", serif;
+      font-size: 2.6rem;
+      line-height: 1.25;
+      letter-spacing: 0.08em;
+      margin-bottom: 18px;
+    }
+
+    .hero-tagline {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 26px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .hero-meta span {
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn-main {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 26px;
+      border-radius: 999px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      background: #111;
+      color: #fff;
+      font-size: 0.9rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: opacity 0.25s ease, transform 0.1s ease;
+    }
+
+    .btn-main:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+
+    .btn-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .btn-sub strong {
+      font-weight: 500;
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-card {
+      background: var(--bg-soft);
+      border-radius: 20px;
+      border: 1px solid var(--border-soft);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .hero-card-image {
+      position: relative;
+      overflow: hidden;
+      max-height: 280px;
+    }
+
+    .hero-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(10%);
+    }
+
+    .hero-card-body {
+      padding: 22px 22px 24px;
+    }
+
+    .hero-card-title {
+      font-size: 0.9rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+    }
+
+    .hero-card-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
       line-height: 1.8;
     }
 
-    .review cite {
-      display: block;
+    /* ===== Section 共通 ===== */
+    section {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .section-heading {
+      text-align: left;
+      margin-bottom: 36px;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.9rem;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+    }
+
+    .section-lead {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      line-height: 1.8;
+    }
+
+    /* ===== Concept ===== */
+    .concept-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 40px;
+    }
+
+    .concept-text p {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: var(--text-main);
+      margin-bottom: 18px;
+    }
+
+    .concept-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .concept-note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
       margin-top: 12px;
-      color: #666;
-      font-size: 0.95rem;
     }
 
-    /* ==== フッター ==== */
-    footer {
-      background: #f9a8d4;
-      color: white;
+    .concept-card {
+      background: #fff;
+      border-radius: 18px;
+      border: 1px solid var(--border-soft);
+      padding: 22px 22px 20px;
+    }
+
+    .concept-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .concept-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .concept-list li:last-child {
+      border-bottom: none;
+    }
+
+    .concept-label {
+      font-weight: 500;
+    }
+
+    .concept-value {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    /* ===== Experience （施術の流れ） ===== */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .flow-item {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      padding: 18px 18px 20px;
+    }
+
+    .flow-step {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .flow-title {
+      font-size: 0.98rem;
+      margin-bottom: 8px;
+    }
+
+    .flow-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ===== Features （こだわり） ===== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 10px;
+    }
+
+    .feature {
+      background: #fff;
+      border-radius: 18px;
+      border: 1px solid var(--border-soft);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .feature-image {
+      height: 190px;
+      overflow: hidden;
+    }
+
+    .feature-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(20%);
+    }
+
+    .feature-body {
+      padding: 16px 18px 20px;
+    }
+
+    .feature-title {
+      font-size: 0.98rem;
+      margin-bottom: 6px;
+    }
+
+    .feature-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ===== Price ===== */
+    .price-section {
+      background: var(--bg-soft);
+      border-radius: 22px;
+      border: 1px solid var(--border-soft);
+      padding: 32px 24px 30px;
+      max-width: 720px;
+      margin: 0 auto;
       text-align: center;
-      padding: 40px 20px;
-      font-size: 0.95rem;
     }
 
-    /* ==== 固定LINEバナー ==== */
+    .price-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      margin-bottom: 16px;
+      color: var(--text-muted);
+      background: #fff;
+    }
+
+    .price-main {
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+    }
+
+    .price-main del {
+      opacity: 0.6;
+      margin-right: 4px;
+    }
+
+    .price-strong {
+      font-size: 1.8rem;
+      letter-spacing: 0.08em;
+    }
+
+    .price-strong span {
+      font-size: 1rem;
+      margin-left: 6px;
+    }
+
+    .price-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    .price-cta-row {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-line {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 26px;
+      border-radius: 999px;
+      background: #06C755;
+      color: #fff;
+      font-size: 0.9rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: opacity 0.25s ease, transform 0.1s ease;
+    }
+
+    .btn-line:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .price-cta-sub {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== Review ===== */
+    .review-section {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .review-card {
+      background: #fff;
+      border-radius: 18px;
+      border: 1px solid var(--border-soft);
+      padding: 24px 24px 22px;
+    }
+
+    .review-text {
+      font-size: 0.98rem;
+      line-height: 1.9;
+      color: var(--text-main);
+      margin-bottom: 14px;
+    }
+
+    .review-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== Access / Info ===== */
+    .info-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 32px;
+      font-size: 0.9rem;
+    }
+
+    .info-table {
+      background: #fff;
+      border-radius: 18px;
+      border: 1px solid var(--border-soft);
+      padding: 18px 20px;
+    }
+
+    .info-table dl {
+      margin: 0;
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      row-gap: 10px;
+      column-gap: 18px;
+    }
+
+    .info-table dt {
+      color: var(--text-muted);
+    }
+
+    .info-table dd {
+      margin: 0;
+    }
+
+    .info-map {
+      background: #e5e5e5;
+      border-radius: 18px;
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      border-top: 1px solid var(--border-soft);
+      padding: 36px 20px 32px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      text-decoration: underline;
+    }
+
+    /* ===== Fixed LINE banner ===== */
     .line-fixed {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #06C755;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 40px;
+      background: #111;
+      color: #fff;
+      padding: 11px 22px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
       text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      transition: opacity 0.3s;
-      z-index: 999;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      z-index: 80;
+      opacity: 0.95;
+      transition: opacity 0.25s ease, transform 0.1s ease;
     }
 
     .line-fixed:hover {
-      opacity: 0.8;
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-top: 60px;
+      }
+
+      .concept-layout,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .site-header-inner {
+        gap: 10px;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero-title-en {
+        font-size: 2.1rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 60px 0;
+      }
+
+      .hero {
+        padding-bottom: 56px;
+      }
+
+      .hero-card-image {
+        max-height: 220px;
+      }
+
+      .line-fixed {
+        left: 16px;
+        right: 16px;
+        justify-content: center;
+      }
     }
   </style>
 </head>
 
 <body>
-
-  <!-- Header -->
-  <header>
-    <div class="header-inner">
-      <h1>LUNA BEAUTY SALON</h1>
-      <p>心も肌も、ふわっとやわらぐ時間を。</p>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="brand">
+        <div class="brand-main">LUNA</div>
+        <div class="brand-sub">BEAUTY SALON</div>
+      </div>
+      <nav class="nav">
+        <a href="#concept">CONCEPT</a>
+        <a href="#flow">EXPERIENCE</a>
+        <a href="#features">CARE</a>
+        <a href="#reserve">PRICE</a>
+        <a href="#review">VOICE</a>
+        <a href="#info">ACCESS</a>
+        <a href="#reserve" class="nav-cta">RESERVE</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h2>初回限定 50%OFFキャンペーン中！</h2>
-    <p>60分で感じる素肌リセット体験</p>
-    <a href="#reserve" class="cta-btn">今すぐ予約する</a>
-  </section>
+  <main class="page">
 
-  <!-- 特徴 -->
-  <section>
-    <h3>選ばれる3つの理由</h3>
-    <div class="feature-grid">
-      <div class="feature">
-        <img src="images/image03.webp" alt="サロンの様子">
-        <h4>1. 丁寧なカウンセリング</h4>
-        <p>肌悩みや生活習慣をヒアリングし、あなたに合った施術プランをご提案します。</p>
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <div class="hero-left-kicker">FACIAL TREATMENT</div>
+        <div class="hero-title-ja">【初回限定】美肌フェイシャル体験</div>
+        <h1 class="hero-title-en">透明感をまとう、<br>大人の素肌へ。</h1>
+        <p class="hero-tagline">
+          一瞬の“映える肌”ではなく、<br>
+          明日の自分に自信が持てる素肌を。<br>
+          忙しい女性のための、60分だけのラグジュアリーケア。
+        </p>
+        <div class="hero-note">FIRST TRIAL CAMPAIGN / WEB予約限定</div>
+        <div class="hero-meta">
+          <span>初回限定 50% OFF</span>
+          <span>所要時間：約60分</span>
+          <span>完全予約制・個室</span>
+        </div>
+        <div class="hero-cta-row">
+          <a href="#reserve" class="btn-main">
+            初回トライアルを予約する
+          </a>
+          <div class="btn-sub">
+            まずは<strong>LINEで簡単に相談</strong>も可能です。
+          </div>
+        </div>
       </div>
-      <div class="feature">
-        <img src="images/image02.webp" alt="">
-        <h4>2. 高品質なオーガニック化粧品</h4>
-        <p>低刺激で肌に優しい製品を使用。敏感肌の方も安心してご利用いただけます。</p>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-card-image">
+            <img src="images/image01.webp" alt="フェイシャルトリートメントの様子">
+          </div>
+          <div class="hero-card-body">
+            <div class="hero-card-title">LUNA SIGNATURE FACIAL</div>
+            <p class="hero-card-text">
+              クレンジングから美容成分導入、デコルテケアまでを一度に叶える、LUNAのシグネチャーコース。
+              心まで静かにととのう、凛とした時間をご用意しています。
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="feature">
-        <img src="images/image04.webp" alt="">
-        <h4>3. 経験豊富なエステティシャン</h4>
-        <p>10年以上の経験を持つスタッフが、一人ひとりに丁寧に施術いたします。</p>
+    </section>
+
+    <!-- Concept -->
+    <section id="concept">
+      <div class="section-heading">
+        <div class="section-kicker">CONCEPT</div>
+        <h2 class="section-title">素肌でまとう、“静かな自信”。</h2>
+        <p class="section-lead">
+          LUNA BEAUTY SALONは、過度な装飾ではなく、本来の素肌そのものを美しく魅せることを大切にしています。
+          香り・光・音まで整えた空間で、日常から一歩離れたプライベートなケア時間をお過ごしください。
+        </p>
       </div>
-    </div>
-  </section>
 
-  <!-- 料金 -->
-  <section class="price" id="reserve">
-    <h3>初回限定トライアル価格</h3>
-    <p>通常価格 <del>¥8,000</del> → <strong>¥3,980（税込）</strong></p>
-    <a href="https://lin.ee/3tuBYAI" target="_blank" class="line-btn">LINEで予約・相談する</a>
-  </section>
+      <div class="concept-layout">
+        <div class="concept-text">
+          <p>
+            肌コンディションが整うと、ファンデーションに頼りすぎない、呼吸のできるメイクへと自然にシフトしていきます。
+            「なんだか今日、きれい」と自分で思える日を増やすこと。それがLUNAの目指すゴールです。
+          </p>
+          <p>
+            トレンドに左右されるのではなく、10年後も「自分らしい」と思える肌の土台づくりを。
+            そのために、カウンセリングと肌分析の時間を大切に、ひとりひとりの生活リズムや体質に合わせたケアを提案いたします。
+          </p>
+          <p class="concept-note">
+            ※無理な押し売りやコース契約の勧誘は行っておりません。安心してお越しください。
+          </p>
+        </div>
 
-  <!-- レビュー -->
-  <section class="review">
-    <h3>お客様の声</h3>
-    <blockquote>
-      「初めてのエステで緊張していましたが、スタッフの方がとても丁寧でリラックスできました。
-      翌日の肌のモチモチ感に感動！ またお願いしたいです。」
-      <cite>— 30代 女性 / 会社員</cite>
-    </blockquote>
-  </section>
+        <aside class="concept-card">
+          <ul class="concept-list">
+            <li>
+              <span class="concept-label">対象</span>
+              <span class="concept-value">20〜40代の働く女性・ママ</span>
+            </li>
+            <li>
+              <span class="concept-label">お悩み</span>
+              <span class="concept-value">くすみ / ごわつき / 毛穴 / 乾燥</span>
+            </li>
+            <li>
+              <span class="concept-label">空間</span>
+              <span class="concept-value">1日3名限定・完全個室</span>
+            </li>
+            <li>
+              <span class="concept-label">スタイル</span>
+              <span class="concept-value">オールハンド × 厳選スキンケア</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
 
-  <!-- フッター -->
+    <!-- Flow -->
+    <section id="flow">
+      <div class="section-heading">
+        <div class="section-kicker">EXPERIENCE</div>
+        <h2 class="section-title">初回トリートメントの流れ</h2>
+        <p class="section-lead">
+          はじめての方でも安心してお過ごしいただけるよう、施術の流れを事前にお伝えしています。
+          カウンセリングを含めて、トータル約60分を予定しています。
+        </p>
+      </div>
+
+      <div class="flow-grid">
+        <div class="flow-item">
+          <div class="flow-step">STEP 01</div>
+          <div class="flow-title">カウンセリング & 肌診断</div>
+          <p class="flow-text">
+            現在の肌状態・ライフスタイル・スキンケア習慣をお伺いし、当日のケア内容と重点ポイントを一緒に決めていきます。
+          </p>
+        </div>
+        <div class="flow-item">
+          <div class="flow-step">STEP 02</div>
+          <div class="flow-title">クレンジング & 角質ケア</div>
+          <p class="flow-text">
+            肌に負担をかけないオイルクレンジングで、メイク汚れや皮脂をやさしくオフ。古い角質を整え、後の美容成分が届きやすい状態に。
+          </p>
+        </div>
+        <div class="flow-item">
+          <div class="flow-step">STEP 03</div>
+          <div class="flow-title">美容液導入 & フェイシャルトリートメント</div>
+          <p class="flow-text">
+            透明感を高める美容成分を導入しながら、表情筋のこわばりをときほぐすハンドトリートメントで、すっきりとした印象に。
+          </p>
+        </div>
+        <div class="flow-item">
+          <div class="flow-step">STEP 04</div>
+          <div class="flow-title">デコルテケア & 仕上げ</div>
+          <p class="flow-text">
+            首・デコルテまでケアし、血行を促進。最後に肌状態に合わせたクリームで仕上げ、今後のホームケアアドバイスを行います。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features">
+      <div class="section-heading">
+        <div class="section-kicker">CARE</div>
+        <h2 class="section-title">LUNAが大切にしていること</h2>
+        <p class="section-lead">
+          高級だからこそ「特別」ではなく、「日常に戻るためのリセット」として通っていただけるサロンでありたいと考えています。
+          そのために、ひとつひとつの要素を丁寧に選び抜きました。
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <article class="feature">
+          <div class="feature-image">
+            <img src="images/image03.webp" alt="カウンセリングの様子">
+          </div>
+          <div class="feature-body">
+            <h3 class="feature-title">丁寧なカウンセリング</h3>
+            <p class="feature-text">
+              肌悩みだけでなく、睡眠・ストレス・食事なども含めてトータルでヒアリング。通うたびに変化を実感していただけるよう、無理のないプランをご提案します。
+            </p>
+          </div>
+        </article>
+
+        <article class="feature">
+          <div class="feature-image">
+            <img src="images/image02.webp" alt="スキンケア製品">
+          </div>
+          <div class="feature-body">
+            <h3 class="feature-title">厳選したスキンケア</h3>
+            <p class="feature-text">
+              敏感肌の方にも配慮した、低刺激かつ有用成分にこだわったプロフェッショナルラインのみを使用。香りもやさしく、施術後の余韻まで楽しめます。
+            </p>
+          </div>
+        </article>
+
+        <article class="feature">
+          <div class="feature-image">
+            <img src="images/image04.webp" alt="エステティシャン">
+          </div>
+          <div class="feature-body">
+            <h3 class="feature-title">経験豊富なエステティシャン</h3>
+            <p class="feature-text">
+              10年以上の現場経験を積んだエステティシャンのみが担当。力加減や触れるリズムまで繊細に調整し、心地よさと結果を両立させます。
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Price -->
+    <section id="reserve">
+      <div class="section-heading">
+        <div class="section-kicker">PRICE</div>
+        <h2 class="section-title">初回限定トライアル</h2>
+        <p class="section-lead">
+          サロンの雰囲気や施術との相性を、まずは一度体験していただきたいという想いから、初回は特別価格をご用意しました。
+        </p>
+      </div>
+
+      <div class="price-section">
+        <div class="price-badge">FIRST TRIAL</div>
+        <p class="price-main">
+          通常価格 <del>¥8,000</del> → <strong>初回限定 50% OFF</strong>
+        </p>
+        <p class="price-strong">
+          ¥3,980 <span>（税込 / 約60分）</span>
+        </p>
+        <p class="price-note">
+          カウンセリング・肌診断を含めた目安時間です。<br>
+          当日はノーメイク、または軽めのメイクでお越しいただくとスムーズです。
+        </p>
+
+        <div class="price-cta-row">
+          <a href="https://lin.ee/Iw14vWf" target="_blank" class="btn-line">
+            LINEで予約・相談する
+          </a>
+          <div class="price-cta-sub">
+            ご希望日時をお送りいただくと、スタッフが24時間以内にご返信いたします。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Review -->
+    <section id="review">
+      <div class="section-heading">
+        <div class="section-kicker">VOICE</div>
+        <h2 class="section-title">お客様の声</h2>
+        <p class="section-lead">
+          いただいたご感想の一部をご紹介します。落ち着いた空間と、翌日以降の肌の変化についてのお声が多く寄せられています。
+        </p>
+      </div>
+
+      <div class="review-section">
+        <article class="review-card">
+          <p class="review-text">
+            「初めてのエステで少し緊張していましたが、最初のカウンセリングからとても丁寧で安心できました。
+            施術後の肌がふっくらして、翌朝のメイクのりに驚きました。<br>
+            職場で『最近肌きれいだね』と言われるようになり、自分でも鏡を見るのが楽しみになっています。」
+          </p>
+          <div class="review-meta">
+            30代 女性 / 会社員
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Info / Access -->
+    <section id="info">
+      <div class="section-heading">
+        <div class="section-kicker">SALON INFO</div>
+        <h2 class="section-title">サロン情報・アクセス</h2>
+        <p class="section-lead">
+          完全予約制・女性専用のプライベートサロンです。ご予約確定後、詳しい住所をお知らせいたします。
+        </p>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-table">
+          <dl>
+            <dt>サロン名</dt>
+            <dd>LUNA BEAUTY SALON</dd>
+            <dt>営業時間</dt>
+            <dd>10:00〜19:00（最終受付 18:00）</dd>
+            <dt>定休日</dt>
+            <dd>不定休</dd>
+            <dt>アクセス</dt>
+            <dd>〇〇駅から徒歩〇分 / 詳細はご予約時にご案内します</dd>
+            <dt>お支払い</dt>
+            <dd>現金 / クレジットカード各種</dd>
+            <dt>その他</dt>
+            <dd>完全予約制 / 女性専用 / キャンセルポリシーあり</dd>
+          </dl>
+        </div>
+        <div class="info-map">
+          地図や周辺写真を掲載予定のスペースです。
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer>
     <p>© 2025 LUNA BEAUTY SALON</p>
-    <p><a href="../index.html" style="color:white;text-decoration:underline;">← ポートフォリオTOPへ戻る</a></p>
+    <p><a href="../index.html">← ポートフォリオTOPへ戻る</a></p>
   </footer>
 
   <!-- 固定LINEバナー -->
-  <a href="https://lin.ee/3tuBYAI" target="_blank" class="line-fixed">LINEで予約・相談</a>
+  <a href="https://lin.ee/Iw14vWf" target="_blank" class="line-fixed">
+    LINEで予約・相談
+  </a>
 
 </body>
 
