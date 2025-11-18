@@ -331,40 +331,39 @@ a {
   height: auto;
 }
 
-/* 初期表示の静止サムネイル */
-.preview-wrapper {
+/* ==== Live Preview Container ==== */
+.live-preview {
   position: relative;
+  overflow: hidden;
+  border-radius: 14px;
   width: 100%;
   height: 260px;
-  overflow: hidden;
-  border-radius: 12px;
 }
 
-.preview-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* ==== 通常プレビューを非表示に ==== */
+.preview-frame {
+  display: none !important;
 }
 
-.preview-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  opacity: 1;
+/* ==== ホバー後のプレビューを常に表示 ===== */
+.preview-hover {
+  opacity: 1 !important;
   pointer-events: none;
 }
 
-.preview-wrapper:hover .preview-img {
-  opacity: 1;
-  pointer-events: auto;
-}
+.preview-frame-large {
+  position: absolute;
+  inset: 0;
+  width: 200%;
+  height: 200%;
+  border: none;
 
-.preview-wrapper:hover .preview-iframe {
-  opacity: 1;
-  pointer-events: auto;
+  /* ← ここの scale を調整すると見え方が変わる */
+  transform: scale(0.5);
+  transform-origin: top left;
+
+  pointer-events: none;
+  filter: brightness(1);
 }
 
 
@@ -794,7 +793,7 @@ a {
   <section id="skills" class="section skills">
     <div class="section-header">
       <h2>Skills</h2>
-      <p>ご依頼の言語化から制作まで、幅広く対応しています。</p>
+      <p>デザイン案の作成から実際の制作まで、幅広く対応します。</p>
     </div>
 
     <div class="skills-grid">
@@ -802,7 +801,8 @@ a {
       <div class="skill-card">
         <div class="skill-icon">🖥️</div>
         <h3>LP / Web制作</h3>
-        <p>デザイン・構成・コーディングまで一貫して対応可能です。</p>
+        <p>デザイン・構成・コーディングまで一貫して対応可能。</p>
+        <p>サーバー手配からWordpressの導入およびテーマ設定やカスタマイズなども承っています。</p>
       </div>
 
       <div class="skill-card">
@@ -814,7 +814,7 @@ a {
       <div class="skill-card">
         <div class="skill-icon">📝</div>
         <h3>オンライン業務</h3>
-        <p>リサーチ・データ整理・画像作成など柔軟に対応します。</p>
+        <p>リサーチ・データ整理・画像作成など柔軟に対応します。記事のライティングも対応しています（IT系が得意です）</p>
       </div>
 
     </div>
