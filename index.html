@@ -344,7 +344,6 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity .4s;
 }
 
 .preview-iframe {
@@ -354,13 +353,13 @@ a {
   width: 100%;
   height: 100%;
   border: none;
-  opacity: 0;
+  opacity: 1;
   pointer-events: none;
-  transition: opacity .4s;
 }
 
 .preview-wrapper:hover .preview-img {
-  opacity: 0;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .preview-wrapper:hover .preview-iframe {
@@ -422,6 +421,65 @@ a {
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
+/* ==== Live Preview Container ==== */
+.live-preview {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  width: 100%;
+  height: 260px; /* カード比率に合わせて調整 */
+}
+
+/* ==== Default Preview (全面表示) ==== */
+.preview-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+
+  /* サイト全体を縮小して見せる */
+  transform: scale(0.35);        /* ← ここを調整すると見える範囲が変わる */
+  transform-origin: top left;
+
+  pointer-events: none;
+  filter: brightness(0.95);
+  transition: 0.3s ease;
+}
+
+/* ==== Hover Preview (大型表示) ==== */
+.preview-hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  overflow: hidden;
+}
+
+.preview-frame-large {
+  position: absolute;
+  inset: 0;
+  width: 200%;
+  height: 200%;
+  border: none;
+
+  transform: scale(0.5);         /* 大きめプレビュー */
+  transform-origin: top left;
+
+  pointer-events: none;
+  filter: brightness(1);
+}
+
+/* ==== Hover Animations ==== */
+.live-preview:hover .preview-hover {
+  opacity: 1;
+}
+
+.live-preview:hover .preview-frame {
+  opacity: 0;
+  transform: scale(0.38); /* 少しだけ拡大 */
+}
 
 /* ===============================
    Skills
@@ -817,6 +875,33 @@ a {
           </div>
         </article>
     
+        <!-- Work Card – Live Preview (iframe) -->
+        <article class="works-card">
+          <div class="works-image live-preview">
+            <a href="https://yamada128.shop/" target="_blank">
+              <iframe src="https://yamada128.shop/" class="preview-frame" loading="lazy"></iframe>
+        
+              <div class="preview-hover">
+                <iframe src="https://yamada128.shop/" class="preview-frame-large" loading="lazy"></iframe>
+              </div>
+            </a>
+        
+            <img src="images/logo.svg" class="work-logo">
+          </div>
+        
+          <div class="works-info">
+            <h3>Webサイト</h3>
+            <ul>
+              <li>青 × ネイビーを基調にしたクリアなデザイン</li>
+              <li>WordPress（Cocoon + カスタムCSS）で構築</li>
+              <li>LINE導線・問い合わせ導線を強化したレイアウト</li>
+            </ul>
+            <a href="https://yamada128.shop/" class="btn" target="_blank">
+              ページにアクセス
+            </a>
+          </div>
+        </article>
+
       </div>
     </section>
 
