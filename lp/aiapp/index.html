@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformers.js Demo</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 2rem auto; padding: 0 1rem; }
+        textarea { width: 100%; height: 100px; margin-bottom: 1rem; padding: 0.5rem; }
+        button { padding: 0.5rem 1rem; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 4px; }
+        button:disabled { background: #ccc; cursor: not-allowed; }
+        #result { margin-top: 1rem; padding: 1rem; border: 1px solid #ddd; background: #f9f9f9; min-height: 50px; }
+        .loading { color: #666; font-style: italic; }
+    </style>
+</head>
+<body>
+    <h2>⚡ ブラウザ完結型AI (Transformers.js)</h2>
+    <p>サーバーに送信せず、あなたのブラウザ内でAIが感情分析を行います。<br>（初回のみモデルのダウンロードが発生します）</p>
+
+    <textarea id="inputText" placeholder="ここに英語の文章を入力してください (例: I love coding!)"></textarea>
+    <br>
+    <button id="analyzeBtn" disabled>モデル読込中...</button>
+
+    <div id="result">ここに結果が表示されます</div>
+
+    <script type="module">
+        import { pipeline, env } from 'https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2';
+
+        // ローカルモデルの設定
+        env.allowLocalModels = false; 
+        env.backends.onnx.wasm.numThreads = 1;
+
+        let classifier;
+        const btn = document.getElementById('analyzeBtn');
+        const resultDiv = document.getElementById('result');
+        const inputArea = document.getElementById('inputText');
+
+        // モデルロード
+        async function loadModel() {
+            try {
+                resultDiv.innerHTML = '<span class="loading">AIモデルをダウンロード中...（初回は数秒〜数十秒かかります）</span>';
+                // 感情分析のパイプラインを作成
+                classifier = await pipeline('sentiment-analysis');
+
+                btn.textContent = '分析する';
+                btn.disabled = false;
+                resultDiv.textContent = '準備完了！文章を入力してボタンを押してください。';
+            } catch (error) {
+                console.error(error);
+                resultDiv.textContent = 'エラー: ' + error.message;
+            }
+        }
+
+        // 分析実行
+        btn.addEventListener('click', async () => {
+            const text = inputArea.value;
+            if (!text) return;
+
+            resultDiv.innerHTML = '<span class="loading">分析中...</span>';
+            const startTime = performance.now();
+
+            // 推論実行
+            const output = await classifier(text);
+            
+            const endTime = performance.now();
+            const processTime = (endTime - startTime).toFixed(2);
+
+            // 結果表示
+            const label = output[0].label;
+            const score = (output[0].score * 100).toFixed(1);
+
+            resultDiv.innerHTML = `
+                <strong>判定: ${label}</strong><br>
+                確信度: ${score}%<br>
+                処理時間: ${processTime} ms
+            `;
+        });
+
+        loadModel();
+    </script>
+</body>
+</html>
